@@ -16,15 +16,12 @@
 [submodule "bundle/surround"]
 	path = bundle/surround
 	url = git://github.com/tpope/vim-surround.git
-[submodule "endwise"]
-	path = endwise
-	url = git://github.com/tpope/vim-endwise.git
 [submodule "bundle/endwise"]
 	path = bundle/endwise
 	url = git://github.com/tpope/vim-endwise.git
 [submodule "bundle/ragtag"]
 	path = bundle/ragtag
 	url = git://github.com/tpope/vim-ragtag.git
-[submodule "vim-emacs-bindings"]
-	path = vim-emacs-bindings
+[submodule "bundle/vim-emacs-bindings"]
+	path = bundle/vim-emacs-bindings
 	url = git://github.com/maxbrunsfeld/vim-emacs-bindings.git
