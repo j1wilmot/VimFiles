@@ -25,3 +25,6 @@
 [submodule "bundle/ragtag"]
 	path = bundle/ragtag
 	url = git://github.com/tpope/vim-ragtag.git
+[submodule "vim-emacs-bindings"]
+	path = vim-emacs-bindings
+	url = git://github.com/maxbrunsfeld/vim-emacs-bindings.git
