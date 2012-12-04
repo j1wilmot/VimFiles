@@ -1,33 +1,93 @@
 " load pathogen.vim 
 call pathogen#infect()
-syntax on
+
+" Display options
+colorscheme vividchalk
+
+" Misc
 filetype plugin indent on
+syntax on
+set hidden " Create hidden buffer without confirm
+set wildmenu " completion hints
+"Auto-completion menu
+set wildmode=list:longest
+set ruler  " Always show ruler
+set list " show hidden chars by default
+set number " Show line numbers
 
 " Tabs and shift
+set autoindent smartindent
+set smarttab
 set shiftwidth=2
 set softtabstop=2
 set tabstop=2
 
-" autoindent new lines
-" set smartindent
+ "Always show the status line
+set laststatus=2
 
-set number " Show line numbers
+"Better line wrapping 
+set wrap
+set textwidth=79
+set formatoptions=qrn1
 
-" === Invisible Characters === "
-" Shortcut to toggle `set list`
-nmap <leader>l :set list!<CR>
+" viminfo: remember certain things when we exit
+" (http://vimdoc.sourceforge.net/htmldoc/usr_21.html)
+"   %    : saves and restores the buffer list
+"   '100 : marks will be remembered for up to 30 previously edited files
+"   /100 : save 100 lines from search history
+"   h    : disable hlsearch on start
+"   "500 : save up to 500 lines for each register
+"   :100 : up to 100 lines of command-line history will be remembered
+"   n... : where to save the viminfo files
+set viminfo=%100,'100,/100,h,\"500,:100,n~/.vim/viminfo
 
 " Symbols for tabstops and EOLs
-set listchars=tab:▸\ ,eol:¬
-					
+set listchars=tab:▸\ ,eol:¬ 
+
 " Invisible characters color
 highlight NonText guifg=#4a4a59
 highlight SpecialKey guifg=#4a4a59
 
-set hidden " Create hidden buffer without confirm 
-set ruler  " Always show ruler
+" Search settings
+" ===================
+" Case insensitive search
+set ignorecase
+set smartcase
+" Highlight search hits
+set hlsearch
+set incsearch
+set showmatch
 
-set list " show hidden chars by default
+" Mappings
+let mapleader=","
+let localmapleader=","
 
-colorscheme vividchalk
+" Source the vimrc file after saving it. This way, you don't have to reload
+" Vim to see the changes.
+if has("autocmd")
+	autocmd bufwritepost .vimrc source $MYVIMRC
+endif
+
+" easier window navigation
+nmap <C-h> <C-w>h
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
+
+" Map display invisible characters
+nmap <leader>l :set list!<CR>
+
+"Automatically change current directory to that of the file in the buffer
+autocmd BufEnter * cd %:p:h
+
+" Plugins
+" =================
+nmap <leader>g :NERDTreeToggle<cr>
+"screen
+let g:ScreenImpl = 'Tmux'
+map <Leader>v :ScreenShellVertical<CR>
+map <Leader>c :ScreenShellVertical bundle exec rails c<CR>
+map <Leader>r :w<CR> :call ScreenShellSend("rspec ".@% . ':' . line('.'))<CR>
+map <Leader>e :w<CR> :call ScreenShellSend("cucumber --format=pretty ".@% . ':' . line('.'))<CR>
+map <Leader>b :w<CR> :call ScreenShellSend("break ".@% . ':' . line('.'))<CR>
 
