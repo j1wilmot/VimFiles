@@ -77,16 +77,13 @@ nmap <C-l> <C-w>l
 " Map display invisible characters
 nmap <leader>l :set list!<CR>
 
-"Automatically change current directory to that of the file in the buffer
-autocmd BufEnter * cd %:p:h
-
 " Plugins
 " =================
 nmap <leader>g :NERDTreeToggle<cr>
 "screen
 let g:ScreenImpl = 'Tmux'
-map <Leader>v :ScreenShellVertical<CR>
-map <Leader>c :ScreenShellVertical bundle exec rails c<CR>
+map <Leader>v :ScreenShell<CR>
+map <Leader>c :ScreenShellbundle exec rails c<CR>
 map <Leader>r :w<CR> :call ScreenShellSend("rspec ".@% . ':' . line('.'))<CR>
 map <Leader>e :w<CR> :call ScreenShellSend("cucumber --format=pretty ".@% . ':' . line('.'))<CR>
 map <Leader>b :w<CR> :call ScreenShellSend("break ".@% . ':' . line('.'))<CR>
