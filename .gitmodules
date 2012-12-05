@@ -37,3 +37,9 @@
 [submodule "bundle/nerdcommenter"]
 	path = bundle/nerdcommenter
 	url = git://github.com/scrooloose/nerdcommenter.git
+[submodule "bundle/zoomwin"]
+	path = bundle/zoomwin
+	url = git://github.com/vim-scripts/ZoomWin.git
+[submodule "bundle/buffergator"]
+	path = bundle/buffergator
+	url = git://github.com/jeetsukumaran/vim-buffergator.git
