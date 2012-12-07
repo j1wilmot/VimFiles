@@ -21,6 +21,7 @@ set smarttab
 set shiftwidth=2
 set softtabstop=2
 set tabstop=2
+set expandtab
 
  "Always show the status line
 set laststatus=2
@@ -29,6 +30,10 @@ set laststatus=2
 set wrap
 set textwidth=79
 set formatoptions=qrn1
+
+" Backup/swap files
+set backupdir^=~/.vim/_backup//    " where to put backup files.
+set directory^=~/.vim/_temp//      " where to put swap files.
 
 " viminfo: remember certain things when we exit
 " (http://vimdoc.sourceforge.net/htmldoc/usr_21.html)
@@ -78,13 +83,12 @@ nmap <C-l> <C-w>l
 nmap <leader>l :set list!<CR>
 
 " Plugins
-" =================
+"=================
+" Ack
+nnoremap <D-F> :Ack
 nmap <leader>g :NERDTreeToggle<cr>
-"screen
-let g:ScreenImpl = 'Tmux'
-map <Leader>v :ScreenShell<CR>
-map <Leader>c :ScreenShellbundle exec rails c<CR>
-map <Leader>r :w<CR> :call ScreenShellSend("rspec ".@% . ':' . line('.'))<CR>
-map <Leader>e :w<CR> :call ScreenShellSend("cucumber --format=pretty ".@% . ':' . line('.'))<CR>
-map <Leader>b :w<CR> :call ScreenShellSend("break ".@% . ':' . line('.'))<CR>
+
+"NERDcommenter
+" TODO get this to work
+"nmap <D-/> <Leader>ci
 
