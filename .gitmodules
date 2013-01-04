@@ -43,9 +43,6 @@
 [submodule "bundle/buffergator"]
 	path = bundle/buffergator
 	url = git://github.com/jeetsukumaran/vim-buffergator.git
-[submodule "bundle/vroom"]
-	path = bundle/vroom
-	url = git://github.com/skalnik/vim-vroom.git
 [submodule "bundle/coffee-script"]
 	path = bundle/coffee-script
 	url = git://github.com/kchmck/vim-coffee-script.git
@@ -55,3 +52,12 @@
 [submodule "bundle/supertab"]
 	path = bundle/supertab
 	url = https://github.com/ervandew/supertab
+[submodule "bundle/tabular"]
+	path = bundle/tabular
+	url = git://github.com/godlygeek/tabular.git
+[submodule "bundle/vimux"]
+	path = bundle/vimux
+	url = git://github.com/benmills/vimux.git
+[submodule "bundle/vroom"]
+	path = bundle/vroom
+	url = git@github.com:j1wilmot/vim-vroom.git
