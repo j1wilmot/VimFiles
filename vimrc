@@ -92,3 +92,4 @@ nmap <leader>g :NERDTreeToggle<cr>
 " TODO get this to work
 "nmap <D-/> <Leader>ci
 
+let g:vroom_use_vimux=1
