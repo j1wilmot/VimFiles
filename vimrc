@@ -84,12 +84,15 @@ nmap <leader>l :set list!<CR>
 
 " Plugins
 "=================
-" Ack
-nnoremap <D-F> :Ack
-nmap <leader>g :NERDTreeToggle<cr>
+nmap <leader>g :NERDTreeFind<cr>
+nmap <leader>G :NERDTreeClose<cr>
 
 "NERDcommenter
 " TODO get this to work
 "nmap <D-/> <Leader>ci
 
-let g:vroom_use_vimux=1
+let g:vroom_use_vimux = 1
+let g:vroom_clear_screen = 1
+
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%81v.\+/
