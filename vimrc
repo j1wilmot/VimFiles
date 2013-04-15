@@ -88,6 +88,10 @@ nmap <leader>l :set list!<CR>
 nmap <leader>g :NERDTreeFind<cr>
 nmap <leader>G :NERDTreeClose<cr>
 
+"Buffergator
+"Open buffergator at top of screen, full screen width
+let g:buffergator_viewport_split_policy = "T"
+
 "NERDcommenter
 " TODO get this to work
 "nmap <D-/> <Leader>ci
