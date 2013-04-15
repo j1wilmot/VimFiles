@@ -14,6 +14,7 @@ set wildmode=list:longest
 set ruler  " Always show ruler
 set list " show hidden chars by default
 set number " Show line numbers
+set noswapfile "Do not save swap files
 
 " Tabs and shift
 set autoindent smartindent
