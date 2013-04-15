@@ -99,5 +99,5 @@ let g:buffergator_viewport_split_policy = "T"
 let g:vroom_use_vimux = 1
 let g:vroom_clear_screen = 1
 
-highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%81v.\+/
+"highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+"match OverLength /\%81v.\+/
