@@ -1,4 +1,4 @@
-" load pathogen.vim 
+" load pathogen.vim
 call pathogen#infect()
 
 " Display options
@@ -15,6 +15,7 @@ set ruler  " Always show ruler
 set list " show hidden chars by default
 set number " Show line numbers
 set noswapfile "Do not save swap files
+set scrolloff=5
 
 " Tabs and shift
 set autoindent smartindent
@@ -27,7 +28,7 @@ set expandtab
  "Always show the status line
 set laststatus=2
 
-"Better line wrapping 
+"Better line wrapping
 set wrap
 set textwidth=79
 set formatoptions=qrn1
@@ -48,7 +49,8 @@ set directory^=~/.vim/_temp//      " where to put swap files.
 set viminfo=%100,'100,/100,h,\"500,:100,n~/.vim/viminfo
 
 " Symbols for tabstops and EOLs
-set listchars=tab:▸\ ,eol:¬ 
+set listchars=tab:▸\ ,eol:¬
+set listchars+=trail:·            " show trailing spaces as dots
 
 " Invisible characters color
 highlight NonText guifg=#4a4a59
@@ -83,6 +85,9 @@ nmap <C-l> <C-w>l
 " Map display invisible characters
 nmap <leader>l :set list!<CR>
 
+" Map ex mode to run q macro (see http://www.reddit.com/r/vim/comments/1v2agp/ex_mode_should_i_learn_it_or_just_remap_shiftq_so/)
+nmap Q @q
+
 " Plugins
 "=================
 nmap <leader>g :NERDTreeFind<cr>
@@ -101,3 +106,9 @@ let g:vroom_clear_screen = 1
 
 "highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 "match OverLength /\%81v.\+/
+
+" highlight traliing whitespace
+match ErrorMsg '\s\+$'
+
+" function to delete trailing whitespace
+nnoremap <Leader>rtw :%s/\s\+$//e<CR>
