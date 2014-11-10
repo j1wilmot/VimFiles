@@ -112,3 +112,6 @@ match ErrorMsg '\s\+$'
 
 " function to delete trailing whitespace
 nnoremap <Leader>rtw :%s/\s\+$//e<CR>
+
+" override annoying K default 'search definition' behavior
+nnoremap K <Nop>
